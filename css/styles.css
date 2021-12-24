@@ -1,37 +1,66 @@
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-regular.otf');
+  font-style: normal ;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-italic.otf');
+  font-style: italic ;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold.otf');
+  font-style: normal ;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold-italic.otf');
+  font-style: italic ;
+  font-weight: bold;
+}
+
 :root {
   font-size: 18px;
+  --gray30: #212121;
+  --gray20: #212429;
+  --gray10: #616161;
+
 }
 
 body {
-  color: #212121;
+  color: var(--gray30);
+  font-family: 'Roboto', sans-serif;
+  /* font-family: charter; */
 }
 
 
 a {
-  color: #212121;
+  color: var(--gray30);
 }
 
 header {
   font-size: 14px;
-  color:#616161
+  color: var(--gray10)
 }
 
 header a {
-  color: #616161;
+  color: var(--gray10);
   text-decoration: none;
 }
 
 header a:hover {
-  color: #212121;
-  background-color:#F2F3F5;
+  color: var(--gray30);
 }
 
 nav details summary {
  font-weight: bold;
-}
-
-ol li {
-  border: 1px solid red;
 }
 
 
@@ -48,4 +77,37 @@ h3 {
 
 li:hover {
   background: none;
+}
+
+pre {
+  background: #FEC62E;
+}
+
+.hero {
+  background-image: linear-gradient(to top, rgb(255, 255, 255, .3), transparent), url('../images/patron.svg');
+  background-size: 11%;
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%; */
+  height: 350px;
+}
+
+::selection {
+  background-color: #FEC62E;
+}
+
+.section-content h3 {
+  counter-increment: titleLists;
+}
+
+.section-content h3::before {
+  content: counter(titleList);
+}
+
+.section-content h3::after {
+  content: '';
+  width: 32px;
+  height: 4px;
+  background: var(--gray30);
+  display: inline-block;
 }
